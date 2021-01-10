@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import sys, re
+s1 = sys.stdin.read()
+def has_braket(s):
+    return re.findall('[\{\}]', s)
+def java(s):
+    return has_braket(s) and re.findall('(public|private|protected|class)+',s)
+
+if java(s1):
+    print('Java')
+elif has_braket(s1):
+    print('C')
+else:
+    print('Python')

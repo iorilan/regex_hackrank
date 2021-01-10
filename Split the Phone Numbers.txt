@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+n = int(input())
+for _ in range(0, n):
+    s=  input()
+    arr =re.findall('([\d]+)[\s-]([\d]+)[\s-]([\d]+)', s)
+    if arr :
+        c,l,n = arr[0]
+        print(f'CountryCode={c},LocalAreaCode={l},Number={n}')
+        

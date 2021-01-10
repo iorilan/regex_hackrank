@@ -1,0 +1,8 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import sys
+import re
+
+s = sys.stdin.read()
+g = re.findall('(/\*.*?\*/|//.*?$)',s, re.DOTALL| re.MULTILINE)
+#print(g)
+print('\n'.join([re.sub('\n\s+', '\n', a) for a in g]))

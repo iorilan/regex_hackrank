@@ -1,0 +1,7 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re, sys
+n = int(input())
+s=sys.stdin.read()
+arr = re.findall('([\w\.]+@\w+(\.\w+)+)',s)
+res = sorted(set([a[0] for a in arr] ))
+print(';'.join(res))

@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+n = int(input())
+for _ in range(0, n):
+    s= input()
+    start = re.findall('^hackerrank',s)
+    end = re.findall('hackerrank$',s)
+    if start and end:
+        print ('0')
+    elif start :
+        print('1')
+    elif end:
+        print('2')
+    else:
+        print('-1')
+        

@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re 
+n = int(input ())
+res=0
+for _ in range(0, n):
+    x= re.search('hackerrank', input(), re.IGNORECASE)
+    if x:
+        res+=1
+print(res)

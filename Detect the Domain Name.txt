@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re 
+n = int(input())
+s= ' '.join(input() for _ in range(0, n))
+
+arr = re.findall('https?://(www2?\.)?(([A-Za-z0-9-]+\.)+[A-Za-z0-9]+)', s)
+res=set()
+if arr:
+    for a in arr:
+        if len(a) > 0 and a[1] not in res:
+            res.add(a[1])
+            
+print(';'.join(sorted(res)))
+        
+
+#for a in arr:
+#    print(a)

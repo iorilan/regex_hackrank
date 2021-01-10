@@ -1,0 +1,25 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+def v4(s):
+    try:
+        arr = s.split('.')
+        return len([a for a in arr if int(a) >= 0 and int(a) <=255]) == 4
+    except:
+        return False
+def v6(s):
+    def is_h(x):
+        return all([x1 >='0' and x1<='9' or x1>='a' and x1 <= 'f' for x1 in x ])
+    try:
+        arr = s.split(':')
+        return len([a for a in arr if is_h(a)])==8
+    except:
+        return False 
+
+n = int(input())
+for _ in range(0,n):
+    s = input()
+    if v4(s):
+        print('IPv4')
+    elif v6(s):
+        print('IPv6')
+    else:
+        print('Neither')

@@ -1,0 +1,23 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re ,sys
+def tags(s):
+    arr = re.findall('<([^>]+)>', s, re.DOTALL|re.MULTILINE)
+    return sorted([a for a in arr if len(a)>0 and a[0]!='/'])
+    
+def attri(tags):
+    tarr = tags.split(' ')
+    tag1 = tarr[0]
+    attrs = re.findall('(\w+=["\'][^"]*["\'])', ' '.join(tarr[1:]))
+    return tag1, [at.split('=')[0] for at in attrs]
+    
+s = sys.stdin.read()
+arr = tags(s)
+res = {}
+for t1 in arr:
+    a,at = attri(t1)
+    res.setdefault(a,set())
+    for at1 in at:
+        res[a].add(at1)
+k = sorted(res.keys())
+for k1 in k:
+    print(k1+':'+','.join(sorted(res[k1])))

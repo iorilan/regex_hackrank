@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+import re
+n = int(input())
+words = []
+for _ in range(0, n):
+    words.extend(input().split(' '))
+
+m = int(input())
+for _ in range(0, m):
+    p = input()
+    res=0
+    for w in words:
+        if re.findall('\w+'+p+'\w+', w):
+            res+=1
+    print(res)

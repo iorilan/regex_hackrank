@@ -1,0 +1,4 @@
+
+
+$Regex_Pattern = '/(?<=\w)[13579]/'; //Do not delete '/'. Replace __________ with your regex.
+

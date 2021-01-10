@@ -1,0 +1,8 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re, sys
+s = sys.stdin.read()
+arr = re.findall('<a.*?href="(.*?)".*?>(.*?)<\/a>', s)
+arr2 = sorted(arr)
+for a in arr:
+    link, c = a
+    print(link+','+re.sub('<.*?>', '', c).strip())

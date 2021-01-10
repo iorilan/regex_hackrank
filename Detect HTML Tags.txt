@@ -1,0 +1,7 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re, sys 
+s = sys.stdin.read()
+
+arr = re.findall('<(\w+)', s)
+res = sorted(set([a for a in arr]))
+print(';'.join(res))

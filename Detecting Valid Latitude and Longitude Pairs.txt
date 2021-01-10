@@ -1,0 +1,26 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+for i in range(0, n):
+    s1 = input()
+    try:
+        s=s1.split(',')
+        p1,p2=s[0][1:], s[1][:-1]
+        
+        if p1[0] == '0' or p1[0] in ['-','+'] and p1[1]=='0' \
+         or p2[0] == '0' or p2[0] in ['-','+'] and p2[1]=='0':
+            print('Invalid')
+            continue
+        elif p1[-1]=='.' or p2[-1]=='.':
+            print('Invalid')
+            continue
+        else:
+            f1,f2 = float(p1), float(p2)
+            if f1 < -90 or f1 > 90 or f2 < -180 or f2 > 180:
+                print('Invalid')
+                continue
+        print('Valid')
+    except Exception as ex:
+        print('Invalid')
+                
+        
+        

@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re 
+import sys
+num = 'id="question-summary-(\d+)">'
+time = 'class="relativetime">(.*?)<'
+content = 'class="question-hyperlink">(.*?)<'
+
+s = sys.stdin.read()
+
+ids = re.findall(num, s)
+times = re.findall(time, s )
+contents = re.findall(content, s)
+res=[]
+for i,_ in enumerate(ids):
+    res.append(';'.join([ids[i],contents[i], times[i]]))
+print('\n'.join(res))
